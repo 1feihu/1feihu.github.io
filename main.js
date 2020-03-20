@@ -1,10 +1,10 @@
 // Fantasy Map Generator main script
-// Mana Trinity (Mana Trinity.fmg@yandex.by). Minsk, 2017-2019
-// https://github.com/Mana Trinity/Fantasy-Map-Generator
+// Zein (Zein.fmg@yandex.by). Minsk, 2017-2019
+// https://github.com/Zein/Fantasy-Map-Generator
 // MIT License
 
 // I don't mind of any help with programming.
-// See also https://github.com/Mana Trinity/Fantasy-Map-Generator/issues/153
+// See also https://github.com/Zein/Fantasy-Map-Generator/issues/153
 
 "use strict";
 const version = "1.22"; // generator version
@@ -315,10 +315,10 @@ function applyDefaultBiomesSystem() {
 
 function showWelcomeMessage() {
   const post = link("https://www.reddit.com/r/FantasyMapGenerator/comments/dlow3k/update_new_version_is_published_v_12", "Main changes:"); // announcement on Reddit
-  const changelog = link("https://github.com/Mana Trinity/Fantasy-Map-Generator/wiki/Changelog", "previous version");
+  const changelog = link("https://github.com/Zein/Fantasy-Map-Generator/wiki/Changelog", "previous version");
   const reddit = link("https://www.reddit.com/r/FantasyMapGenerator", "Reddit community");
   const discord = link("https://discordapp.com/invite/X7E84HU", "Discord server");
-  const patreon = link("https://www.patreon.com/Mana Trinity", "Patreon");
+  const patreon = link("https://www.patreon.com/Zein", "Patreon");
 
   alertMessage.innerHTML = `The Fantasy Map Generator is updated up to version <b>${version}</b>.
     This version is compatible with ${changelog}, loaded <i>.map</i> files will be auto-updated.
@@ -673,7 +673,7 @@ function openNearSeaLakes() {
 // define map size and position based on template and random factor
 function defineMapSize() {
   const [size, latitude] = getSizeAndLatitude();
-  if (!locked("mapSize")) mapSizeOutput.value = mapSiMana Trinityput.value = size;
+  if (!locked("mapSize")) mapSizeOutput.value = mapSizeInput.value = size;
   if (!locked("latitude")) latitudeOutput.value = latitudeInput.value = latitude;
 
   function getSizeAndLatitude() {
