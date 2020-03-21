@@ -1,1 +1,1 @@
-Mana Trinity World Creator & Editor\index.html
+index.html
