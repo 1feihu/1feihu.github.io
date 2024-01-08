@@ -1,18 +1,9 @@
+@@ -0,0 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Hex Calculator</title>
-    <style>
-        /* Use a media query to scale the GUI by 2x when the viewport width is less than 800px */
-        @media (max-width: 800px) {
-            /* Use the transform property to scale the wrapper element by 2x */
-            #wrapper {
-                transform: scale(2);
-                transform-origin: top left;
-            }
-        }
-    </style>
     <script>
         // Define a function to calculate the new value
         function calculate() {
@@ -35,13 +26,13 @@
 
             // Calculate the new value by applying the operation to the hex value and the offset
             var new_value;
-            if (operation == "Add +") {
+            if (operation == "+") {
                 new_value = hex_value + offset;
-            } else if (operation == "Subtract -") {
+            } else if (operation == "-") {
                 new_value = hex_value - offset;
-            } else if (operation == "Multiply *") {
+            } else if (operation == "*") {
                 new_value = hex_value * offset;
-            } else if (operation == "Divide /") {
+            } else if (operation == "/") {
                 new_value = hex_value / offset;
             } else {
                 // If the operation is invalid, display an error message
@@ -62,15 +53,15 @@
     <p>Enter a hex value and an offset, then choose an operation and click Calculate.</p>
     <form>
         <label for="hex_value">Hex value:</label>
-        <input type="text" id="hex_value" name="hex_value" autocapitalize="characters"><br>
+        <input type="text" id="hex_value" name="hex_value"><br>
         <label for="offset">Offset:</label>
-        <input type="text" id="offset" name="offset" autocapitalize="characters"><br>
+        <input type="text" id="offset" name="offset"><br>
         <label for="operation">Operation:</label>
         <select id="operation" name="operation">
-            <option value="+">Add +</option>
-            <option value="-">Subtract -</option>
-            <option value="*">Multiply *</option>
-            <option value="/">Divide /</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
         </select><br>
         <button type="button" onclick="calculate()">Calculate</button>
     </form>
