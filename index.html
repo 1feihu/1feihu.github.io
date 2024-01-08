@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hex Calculator</title>
+    <script>
+        // Define a function to calculate the new value
+        function calculate() {
+            // Get the hex value and the offset from the inputs
+            var hex_value = document.getElementById("hex_value").value;
+            var offset = document.getElementById("offset").value;
+
+            // Get the operation from the select element
+            var operation = document.getElementById("operation").value;
+
+            // Try to convert the hex value and the offset to integers
+            try {
+                hex_value = parseInt(hex_value, 16);
+                offset = parseInt(offset, 16);
+            } catch (error) {
+                // If the conversion fails, display an error message
+                document.getElementById("result").innerHTML = "Invalid input";
+                return;
+            }
+
+            // Calculate the new value by applying the operation to the hex value and the offset
+            var new_value;
+            if (operation == "+") {
+                new_value = hex_value + offset;
+            } else if (operation == "-") {
+                new_value = hex_value - offset;
+            } else if (operation == "*") {
+                new_value = hex_value * offset;
+            } else if (operation == "/") {
+                new_value = hex_value / offset;
+            } else {
+                // If the operation is invalid, display an error message
+                document.getElementById("result").innerHTML = "Invalid operation";
+                return;
+            }
+
+            // Convert the new value to a hex string
+            new_value = new_value.toString(16);
+
+            // Display the new value
+            document.getElementById("result").innerHTML = new_value;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hex Calculator</h1>
+    <p>Enter a hex value and an offset, then choose an operation and click Calculate.</p>
+    <form>
+        <label for="hex_value">Hex value:</label>
+        <input type="text" id="hex_value" name="hex_value"><br>
+        <label for="offset">Offset:</label>
+        <input type="text" id="offset" name="offset"><br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <p>Result:</p>
+    <p id="result"></p>
+</body>
+</html>
